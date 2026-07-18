@@ -1,154 +1,154 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.header');
-  const hamburger = document.querySelector('.hamburger');
-  const nav = document.querySelector('nav');
+    const header = document.querySelector('.header');
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
 
-  // ハンバーガーメニュー
-  if (hamburger && nav) {
-    hamburger.addEventListener('click', () => {
-      nav.classList.toggle('is-open');
-      hamburger.classList.toggle('is-open');
+    // ハンバーガーメニュー
+    if (hamburger && nav) {
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('is-open');
+            hamburger.classList.toggle('is-open');
 
-      if (window.innerWidth <= 768) {
-        nav.style.display = nav.classList.contains('is-open') ? 'flex' : 'none';
-      }
-    });
-  }
-
-  // リサイズ対応
-  function updateMenu() {
-    if (!nav) return;
-
-    if (window.innerWidth > 768) {
-      nav.style.display = 'flex';
-    } else if (!nav.classList.contains('is-open')) {
-      nav.style.display = 'none';
+            if (window.innerWidth <= 768) {
+                nav.style.display = nav.classList.contains('is-open') ? 'flex' : 'none';
+            }
+        });
     }
-  }
 
-  updateMenu();
-  window.addEventListener('resize', updateMenu);
+    // リサイズ対応
+    function updateMenu() {
+        if (!nav) return;
 
-  // スクロール時ヘッダー
-  window.addEventListener('scroll', () => {
-    if (!header) return;
-
-    if (window.scrollY > 60) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+        if (window.innerWidth > 768) {
+            nav.style.display = 'flex';
+        } else if (!nav.classList.contains('is-open')) {
+            nav.style.display = 'none';
+        }
     }
-  });
 
-  // スムーススクロール
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', e => {
+    updateMenu();
+    window.addEventListener('resize', updateMenu);
 
-      const target = document.querySelector(link.getAttribute('href'));
+    // スクロール時ヘッダー
+    window.addEventListener('scroll', () => {
+        if (!header) return;
 
-      if (!target) return;
-
-      e.preventDefault();
-
-      target.scrollIntoView({
-        behavior: "smooth"
-      });
-
-      if (window.innerWidth <= 768) {
-        nav.classList.remove("is-open");
-        nav.style.display = "none";
-      }
-
-    });
-  });
-
-  // フェードイン
-  const observer = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-
+        if (window.scrollY > 60) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     });
 
-  }, {
-    threshold: 0.2
-  });
+    // スムーススクロール
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', e => {
 
-  document.querySelectorAll("section").forEach(section => {
-    section.classList.add("fade");
-    observer.observe(section);
-  });
+            const target = document.querySelector(link.getAttribute('href'));
 
-  document.querySelectorAll(".cards article").forEach(card => {
-    card.classList.add("fade");
-    observer.observe(card);
-  });
+            if (!target) return;
 
-  document.querySelectorAll(".gallery .item").forEach(item => {
-    item.classList.add("fade");
-    observer.observe(item);
-  });
+            e.preventDefault();
 
-  // カウンターアニメーション
-  const counters = document.querySelectorAll("[data-counter]");
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
 
-  counters.forEach(counter => {
-
-    let started = false;
-
-    const counterObserver = new IntersectionObserver(entries => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting && !started) {
-
-          started = true;
-
-          const target = parseInt(counter.dataset.counter);
-
-          let value = 0;
-
-          const increment = Math.ceil(target / 100);
-
-          const timer = setInterval(() => {
-
-            value += increment;
-
-            if (value >= target) {
-
-              value = target;
-
-              clearInterval(timer);
-
+            if (window.innerWidth <= 768) {
+                nav.classList.remove("is-open");
+                nav.style.display = "none";
             }
 
-            counter.textContent = value.toLocaleString();
+        });
+    });
 
-          }, 20);
+    // フェードイン
+    const observer = new IntersectionObserver(entries => {
 
-        }
+        entries.forEach(entry => {
 
-      });
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+
+        });
+
+    }, {
+        threshold: 0.2
+    });
+
+    document.querySelectorAll("section").forEach(section => {
+        section.classList.add("fade");
+        observer.observe(section);
+    });
+
+    document.querySelectorAll(".cards article").forEach(card => {
+        card.classList.add("fade");
+        observer.observe(card);
+    });
+
+    document.querySelectorAll(".gallery .item").forEach(item => {
+        item.classList.add("fade");
+        observer.observe(item);
+    });
+
+    // カウンターアニメーション
+    const counters = document.querySelectorAll("[data-counter]");
+
+    counters.forEach(counter => {
+
+        let started = false;
+
+        const counterObserver = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting && !started) {
+
+                    started = true;
+
+                    const target = parseInt(counter.dataset.counter);
+
+                    let value = 0;
+
+                    const increment = Math.ceil(target / 100);
+
+                    const timer = setInterval(() => {
+
+                        value += increment;
+
+                        if (value >= target) {
+
+                            value = target;
+
+                            clearInterval(timer);
+
+                        }
+
+                        counter.textContent = value.toLocaleString();
+
+                    }, 20);
+
+                }
+
+            });
+
+        });
+
+        counterObserver.observe(counter);
 
     });
 
-    counterObserver.observe(counter);
+    // ギャラリー
+    document.querySelectorAll(".gallery .item").forEach(item => {
 
-  });
+        item.addEventListener("click", () => {
 
-  // ギャラリー
-  document.querySelectorAll(".gallery .item").forEach(item => {
+            item.classList.toggle("zoom");
 
-    item.addEventListener("click", () => {
-
-      item.classList.toggle("zoom");
+        });
 
     });
 
-  });
-
-  console.log("Website Loaded");
+    console.log("Website Loaded");
 });
