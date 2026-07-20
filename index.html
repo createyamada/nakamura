@@ -4,15 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>中村工業株式会社</title>
+    <title>株式会社ナカムラ</title>
     <meta name="description" content="Sample corporate site">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> -->
 </head>
 
 <body>
     <header class="header">
-        <div class="logo">中村工業株式会社</div>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="中村工業株式会社 ロゴ">
+            <h1 class="logo-text">株式会社ナカムラ</h1>
+            <p>Nakamura Co., Ltd.</p>
+        </div>
+
         <button class="hamburger">☰</button>
         <nav>
             <a href="#about">ABOUT</a>
@@ -22,17 +26,82 @@
         </nav>
     </header>
     <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/movies/hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="hero__content">
-            <h1>Create the Future.</h1>
-            <p>Craftsmanship × Innovation</p>
+            <h1>必要なインフラを必要な場所に</h1>
+            <p>安心 × 安全</p>
         </div>
     </section>
-    <section id="about">
+    <section id="about" class="about">
         <h2 class="section_title">ABOUT</h2>
-        <p>会社紹介...</p>
+        <p class="section_translate">会社紹介</p>
+        <h2 class="section-title">会社概要</h2>
+        <div class="company-box">
+            <table>
+                <tr>
+                    <th>会社名</th>
+                    <td>株式会社ナカムラ</td>
+                </tr>
+                <tr>
+                    <th>代表取締役社長</th>
+                    <td>中村 将人</td>
+                </tr>
+                <tr>
+                    <th>所在地</th>
+                    <td>
+                        〒000-0000<br>
+                        ○○県○○市○○1-2-3
+                    </td>
+                </tr>
+                <tr>
+                    <th>TEL</th>
+                    <td>000-000-0000</td>
+                </tr>
+                <tr>
+                    <th>FAX</th>
+                    <td>000-000-0000</td>
+                </tr>
+                <tr>
+                    <th>設立</th>
+                    <td>2005年4月</td>
+                </tr>
+                <tr>
+                    <th>資本金</th>
+                    <td>500万円</td>
+                </tr>
+                <tr>
+                    <th>従業員数</th>
+                    <td>15名</td>
+                </tr>
+                <tr>
+                    <th>事業内容</th>
+                    <td>
+                        ガス配管工事<br>
+                        設備配管工事<br>
+                        溶接工事<br>
+                        メンテナンス
+                    </td>
+                </tr>
+                <tr>
+                    <th>建設業許可</th>
+                    <td>○○県知事許可 第12345号</td>
+                </tr>
+                <tr>
+                    <th>対応エリア</th>
+                    <td>○○県・△△県・□□県</td>
+                </tr>
+                <tr>
+                    <th>主要取引先</th>
+                    <td>東京ガス・厚木ガス</td>
+                </tr>
+            </table>
     </section>
-    <section id="service">
+    <!-- <section id="service">
         <h2 class="section_title">SERVICE</h2>
+        <p class="section_translate">会社紹介</p>
         <div class="cards">
             <article>
                 <h3>Tile</h3>
@@ -44,9 +113,37 @@
                 <h3>Exterior</h3>
             </article>
         </div>
-    </section>
+    </section> -->
     <section id="works">
         <h2 class="section_title">WORKS</h2>
+        <p class="section_translate">作業実績</p>
+        <div class="works-grid">
+            <a href="#" class="work large">
+                <img src="assets/images/kanchu.jpg" alt="工場配管工事">
+                <div class="overlay">
+                    <span>School</span>
+                    <h3>神奈川県平塚市立神田中学校</h3>
+                </div>
+            </a>
+            <a href="#" class="work">
+                <img src="assets/images/amyu.jpeg" alt="都市ガス工事">
+                <div class="overlay">
+                    <span>Commercial Facility</span>
+                    <h3>amyu 厚木</h3>
+                </div>
+            </a>
+            <a href="#" class="work">
+                <img src="assets/images/hospital.jpg" alt="病院設備工事">
+                <div class="overlay">
+                    <span>Hospital</span>
+                    <h3>神奈川県厚木市立病院</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section id="recrute">
+        <h2 class="section_title">RECRUTE</h2>
+        <p class="section_translate">作業実績</p>
         <div class="gallery">
             <div class="item">Project 1</div>
             <div class="item">Project 2</div>
@@ -55,6 +152,8 @@
     </section>
     <section id="contact">
         <h2 class="section_title">CONTACT</h2>
+        <p class="section_translate">お問い合わせ</p>
+
         <form>
             <input placeholder="お名前">
             <input type="email" placeholder="メール">
@@ -62,6 +161,20 @@
             <button>送信</button>
         </form>
     </section>
+
+
+
+    <section id="contact">
+        <h2 style="font-family: 'Noto Sans JP', serif;">日本語（Noto Sans JP）</h2>
+        <h2 style="font-family: 'Zen Kaku Gothic New', serif;">日本語（Zen Kaku Gothic New）</h2>
+        <h2 style="font-family: 'BIZ UDPGothic', serif;">日本語（BIZ UDPGothic）</h2>
+        <h2 style="font-family: 'Bebas Neue', serif;">Alfabet（Bebas Neue）</h2>
+        <h2 style="font-family: 'Montserrat', serif;">Alfabet（Montserrat）</h2>
+        <h2 style="font-family: 'Anton', serif;">Alfabet（Anton）</h2>
+
+    </section>
+    </div>
+
     <footer>© COMPANY</footer>
     <script src="js/script.js"></script>
 </body>
