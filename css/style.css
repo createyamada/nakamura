@@ -166,7 +166,14 @@ nav {
 }
 
 section {
-  padding: 100px 8%;
+    padding:180px 0;
+}
+
+.container {
+    width:100%;
+    max-width:1280px;
+    margin:0 auto;
+    padding:0 40px;
 }
 
 .section_title {
@@ -216,7 +223,7 @@ section {
 .about th {
   width: 220px;
   text-align: left;
-  font-weight: 700;
+  font-weight: bold;
   color: #222;
   padding: 30px;
   border-bottom: 1px solid #ddd;
@@ -284,16 +291,17 @@ section {
 }
 
 .overlay span {
-  display: inline-block;
-  margin-bottom: 10px;
-  color: #ffd84d;
-  letter-spacing: 0.2em;
-  font-size: 0.8rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: #FFDE59;
+    text-transform: uppercase;
 }
 
 .overlay h3 {
-  font-size: 2rem;
-  font-weight: 700;
+    font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+    font-weight: 600;
+    line-height: 1.5;
+    margin-top: 8px;
 }
 
 .work:hover img {
@@ -342,25 +350,358 @@ footer {
   padding: 40px;
 }
 
+/* ==========================================
+   Tablet (768px ～ 1199px)
+========================================== */
+@media screen and (min-width:768px) and (max-width:1199px){
+
+    /* ---------- Container ---------- */
+
+    .container{
+
+        width:94%;
+
+        max-width:1100px;
+
+        margin:auto;
+
+    }
+
+    section{
+
+        padding:120px 0;
+
+    }
+
+    /* ---------- Header ---------- */
+
+    .header{
+
+        padding:20px 32px;
+
+    }
+
+    .logo img{
+
+        width:46px;
+        height:46px;
+
+    }
+
+    .logo-text{
+
+        font-size:1.25rem;
+
+    }
+
+    nav{
+
+        gap:22px;
+
+    }
+
+    nav a{
+
+        font-size:.95rem;
+
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero{
+
+        height:85vh;
+
+    }
+
+    .hero h1{
+
+        font-size:4rem;
+
+    }
+
+    .hero p{
+
+        font-size:1.15rem;
+
+    }
+
+    /* ---------- Section Title ---------- */
+
+    .section_title{
+
+        font-size:4rem;
+
+    }
+
+    .section_translate{
+
+        font-size:1.2rem;
+
+    }
+
+    /* ---------- About ---------- */
+
+    .about th{
+
+        width:180px;
+
+        padding:24px;
+
+    }
+
+    .about td{
+
+        padding:24px;
+
+    }
+
+    /* ---------- Works ---------- */
+
+    .works-grid{
+
+        grid-template-columns:1.6fr 1fr;
+
+        grid-template-rows:260px 260px;
+
+        gap:20px;
+
+    }
+
+    .overlay{
+
+        left:24px;
+        bottom:24px;
+
+    }
+
+    .overlay span{
+
+        font-size:.75rem;
+
+    }
+
+    .overlay h3{
+
+        font-size:1.3rem;
+
+        line-height:1.4;
+
+    }
+
+    /* ---------- Contact ---------- */
+
+    form{
+
+        max-width:800px;
+
+    }
+
+    input,
+    textarea{
+
+        font-size:16px;
+
+    }
+
+}
+
+
+/* ==========================================
+   Phone (768px)
+========================================== */
+
 @media (max-width: 768px) {
   nav {
     display: none;
   }
 
-  .hamburger {
-    display: block;
-  }
+nav{
+
+    position:fixed;
+
+    top:74px;
+
+    left:0;
+
+    width:100%;
+
+    background:#111;
+
+    flex-direction:column;
+
+    padding:30px;
+
+    display:none;
+
+}
+
+img{
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+nav a{
+
+    padding:18px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+}
 
   .cards,
   .gallery {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
-    font-size: 3rem;
-  }
+.hero{
 
-  section {
-    padding: 80px 6%;
-  }
+    height:80vh;
+
 }
+
+.hero h1{
+
+    font-size:2.3rem;
+    line-height:1.4;
+
+}
+
+.hero p{
+
+    font-size:1rem;
+
+}
+
+
+section{
+
+    padding:90px 0;
+
+}
+
+.section_title{
+
+    font-size:2.8rem;
+
+}
+
+.section_translate{
+
+    font-size:.9rem;
+
+}
+
+
+    .container{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .header{
+
+        padding:16px 20px;
+
+    }
+
+    .logo img{
+
+        width:42px;
+        height:42px;
+
+    }
+
+    .logo-text{
+
+        font-size:1.1rem;
+
+    }
+
+    .logo p{
+
+        display:none;
+
+    }
+.about table,
+.about tbody,
+.about tr,
+.about th,
+.about td{
+
+    display:block;
+
+}
+
+.about tr{
+
+    padding:20px 0;
+
+}
+
+.about th{
+
+    width:100%;
+
+    padding:10px 0 0;
+
+    border:none;
+
+}
+
+.about td{
+
+    padding:10px 0 25px;
+
+}
+
+.works-grid{
+
+    grid-template-columns:1fr;
+
+    grid-template-rows:auto;
+
+}
+
+.large{
+
+    grid-row:auto;
+
+}
+
+.work{
+
+    height:260px;
+
+}
+
+.overlay{
+
+    transform:none;
+
+    opacity:1;
+
+}
+
+form{
+
+    width:100%;
+
+}
+
+input,
+textarea{
+
+    font-size:16px;
+
+}
+
+footer{
+
+    padding:60px 20px;
+
+}
+
+}
+
