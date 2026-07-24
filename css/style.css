@@ -215,6 +215,31 @@ section {
   border-top: 2px solid #111;
 }
 
+.about{
+    position:relative;
+    margin-top:-220px;
+    z-index:10;
+}
+
+.about-visual{
+    width:100vw;
+    height:100%;
+    overflow:hidden;
+    margin-bottom:-480px;
+    z-index:1;
+}
+
+.about-visual img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.about-header{
+    position:relative;
+    z-index:20;
+}
+
 .about table {
   width: 100%;
   border-collapse: collapse;
