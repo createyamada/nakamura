@@ -176,16 +176,75 @@ section {
     padding:0 40px;
 }
 
-.section_title {
-  font-family: "Roboto", sans-serif;
-  margin-bottom: 0%;
-  color: #ffde59;
-  /* color: black; */
-  font-size: 5rem;
-  font-weight: 300;
-  position: relative;
-  /* -webkit-text-stroke: 2px black; */
+.section-title {
+    position: relative;
+    display: inline-flex;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 72px;
+    /* font-weight: 700; */
+    /* letter-spacing: 0.15em; */
+    line-height: 1;
+    color: #000;
 }
+
+.section-title .first {
+    color: #FFDE59;
+}
+
+/* .section-title::before{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:170px;
+    height:170px;
+    border-left:4px solid #FFDE59;
+    border-bottom:4px solid #FFDE59;
+    transform:skewX(-30deg);
+} */
+
+.section-title::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:4px;
+    background:#FFDE59;
+}
+
+.section-title .rest{
+    color:#111;
+}
+
+/* 右端の斜線 */
+/* .section-title::marker{
+    display:none;
+}
+
+.section-title::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:4px;
+    background:#FFDE59;
+}
+
+.section-title:before{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:160px;
+    height:140px;
+    border-left:4px solid #FFDE59;
+    border-bottom:4px solid #FFDE59;
+    transform:skewX(-30deg);
+} */
 
 .section_translate {
   font-size: 1.5rem;
