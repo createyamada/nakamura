@@ -154,6 +154,10 @@ section {
   padding: 180px 0;
 }
 
+section:nth-of-type(even) {
+  background-color: black!important;
+}
+
 .container {
   width: 100%;
   max-width: 1280px;
@@ -232,7 +236,7 @@ section {
   position: relative;
   z-index: 20;
   margin-bottom: -170px;
-  
+
 }
 
 .project-visual {
