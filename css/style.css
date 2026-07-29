@@ -165,31 +165,35 @@ section {
   position: relative;
   display: inline-flex;
   align-items: flex-end;
-  padding-bottom: 10px;
-  font-weight: bold;
-  font-size: 72px;
+  flex-wrap: wrap;
+
+  padding-bottom: 12px;
+
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 700;
   line-height: 1;
-  color: #000;
+  letter-spacing: 0.03em;
 }
 
 .section-title .first {
   color: #ffde59;
 }
 
-.section-title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 4px;
-  background: #ffde59;
-}
-
 .section-title .rest {
   color: #111;
 }
 
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: #ffde59;
+}
 .section-translate {
   font-size: 1.5rem;
   font-weight: bold;
@@ -394,84 +398,38 @@ footer {
 /* ==========================================
    Tablet (768px ～ 1199px)
 ========================================== */
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  /* ---------- Container ---------- */
-
+@media (min-width: 768px) and (max-width: 1199px) {
   .container {
-    width: 94%;
-    max-width: 1100px;
-    margin: auto;
+    padding: 0 32px;
   }
 
   section {
-    padding: 120px 0;
+    padding: 140px 0;
   }
 
-  /* ---------- Header ---------- */
-
-  .header {
-    padding: 20px 32px;
-  }
-
-  .logo img {
-    width: 46px;
-    height: 46px;
-  }
-
-  .logo-text {
-    font-size: 1.25rem;
-  }
-
-  nav {
-    gap: 22px;
-  }
-
-  nav a {
-    font-size: 0.95rem;
-  }
-
-  /* ---------- Hero ---------- */
-
-  .hero {
-    height: 85vh;
-  }
-
-  .hero h1 {
-    font-size: 4rem;
-  }
-
-  .hero p {
-    font-size: 1.15rem;
-  }
-
-  /* ---------- Section Title ---------- */
-
-  .section_title {
-    font-size: 4rem;
+  .section-title {
+    font-size: 3.8rem;
   }
 
   .section-translate {
     font-size: 1.2rem;
   }
 
-  /* ---------- About ---------- */
-
-  .about th {
-    width: 180px;
-
-    padding: 24px;
+  .about-header {
+    margin-bottom: -120px;
   }
 
-  .about td {
-    padding: 24px;
+  .about-visual {
+    height: 380px;
   }
 
-  /* ---------- Works ---------- */
+  .about {
+    margin-top: -70px;
+  }
 
   .works-grid {
-    grid-template-columns: 1.6fr 1fr;
-    grid-template-rows: 260px 260px;
-    gap: 20px;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 250px 250px;
   }
 
   .overlay {
@@ -479,107 +437,82 @@ footer {
     bottom: 24px;
   }
 
-  .overlay span {
-    font-size: 0.75rem;
-  }
-
   .overlay h3 {
-    font-size: 1.3rem;
-    line-height: 1.4;
+    font-size: 1.15rem;
   }
 
-  /* ---------- Contact ---------- */
-
-  form {
-    max-width: 800px;
+  .hero {
+    height: 90vh;
   }
 
-  input,
-  textarea {
-    font-size: 16px;
+  .hero h1 {
+    font-size: 4rem;
   }
 }
 
 /* ==========================================
    Phone (768px)
 ========================================== */
-
 @media (max-width: 768px) {
-  nav {
-    display: none;
+  .header {
+    padding: 16px 20px;
   }
 
-  nav {
-    position: fixed;
-    top: 74px;
-    left: 0;
-    width: 100%;
-    background: #111;
-    flex-direction: column;
-    padding: 30px;
-    display: none;
+  .container {
+    padding: 0 20px;
   }
 
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  nav a {
-    padding: 18px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .cards,
-  .gallery {
-    grid-template-columns: 1fr;
+  section {
+    padding: 80px 0;
   }
 
   .hero {
-    height: 80vh;
+    height: 75vh;
   }
 
   .hero h1 {
     font-size: 2.3rem;
-    line-height: 1.4;
+    line-height: 1.35;
   }
 
   .hero p {
     font-size: 1rem;
   }
 
-  section {
-    padding: 90px 0;
+  .section-title {
+    font-size: 2.7rem;
+    padding-bottom: 10px;
   }
 
-  .section_title {
-    font-size: 2.8rem;
+  .section-title::after {
+    height: 3px;
   }
 
   .section-translate {
-    font-size: 0.9rem;
+    margin-top: 12px;
+    font-size: 1rem;
   }
 
-  .container {
-    width: 100%;
-    padding: 0 20px;
-  }
-  .header {
-    padding: 16px 20px;
+  .section-translate-second {
+    margin-bottom: 50px;
   }
 
-  .logo img {
-    width: 42px;
-    height: 42px;
+  .about-header {
+    margin-bottom: -70px;
   }
 
-  .logo-text {
-    font-size: 1.1rem;
+  .about {
+    margin-top: -40px;
   }
 
-  .logo p {
-    display: none;
+  .about-visual {
+    height: 220px;
   }
+
+  .about-content {
+    padding-top: 50px;
+  }
+
   .about table,
   .about tbody,
   .about tr,
@@ -588,23 +521,22 @@ footer {
     display: block;
   }
 
-  .about tr {
-    padding: 20px 0;
-  }
-
   .about th {
     width: 100%;
-    padding: 10px 0 0;
+    padding: 12px 0 0;
     border: none;
+    font-size: 0.9rem;
   }
 
   .about td {
-    padding: 10px 0 25px;
+    padding: 8px 0 24px;
+    font-size: 0.95rem;
+    line-height: 1.8;
   }
 
   .works-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    gap: 20px;
   }
 
   .large {
@@ -612,25 +544,39 @@ footer {
   }
 
   .work {
-    height: 260px;
+    height: 220px;
   }
 
   .overlay {
-    transform: none;
-
     opacity: 1;
+    transform: none;
+    left: 20px;
+    bottom: 20px;
   }
 
-  form {
-    width: 100%;
+  .overlay span {
+    font-size: 0.7rem;
   }
 
-  input,
-  textarea {
-    font-size: 16px;
+  .overlay h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo-text h1 {
+    font-size: 1rem;
+  }
+
+  .logo p {
+    display: none;
   }
 
   footer {
-    padding: 60px 20px;
+    padding: 40px 20px;
   }
 }
