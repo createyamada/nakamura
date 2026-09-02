@@ -1,0 +1,58 @@
+.recruit-page .header nav a[aria-current="page"] { color:var(--yellow); }
+.recruit-hero { padding:145px 0 56px; }
+.breadcrumb { display:flex; flex-wrap:wrap; gap:14px; font-size:10px; color:var(--muted); }
+.breadcrumb a:hover { text-decoration:underline; }
+.recruit-hero-grid { display:grid; grid-template-columns:1.1fr 1fr; align-items:center; gap:55px; margin:65px 0 48px; }
+.recruit-hero h1 { font-size:clamp(35px,4.3vw,62px); line-height:1.55; letter-spacing:.035em; margin:25px 0; }
+.recruit-lead { color:var(--muted); font-size:14px; line-height:2.2; }
+.recruit-hero-visual { position:relative; height:395px; overflow:hidden; background:#fff; }
+.recruit-hero-visual img { width:100%; height:100%; object-fit:cover; object-position:70% center; }
+.recruit-hero-visual>span { position:absolute; left:30px; top:25px; font-size:clamp(38px,4.5vw,64px); font-weight:800; line-height:1.1; letter-spacing:-.04em; color:var(--ink); }
+.recruit-hero-visual>p { position:absolute; bottom:0; left:0; right:0; padding:16px 25px; background:var(--yellow); font-size:12px; }
+.draft-notice { display:flex; align-items:flex-start; gap:20px; padding:22px 25px; border:1px solid var(--line); background:#eeefe8; }
+.draft-notice>span { flex:none; padding:3px 9px; font-size:9px; letter-spacing:.1em; background:var(--ink); color:#fff; }
+.draft-notice p { font-size:12px; color:var(--muted); line-height:1.9; }
+.job-section { background:#eaece5; }
+.job-cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:30px; }
+.job-cards article { border-top:3px solid var(--yellow); padding:26px 0 0; }
+.job-cards article>span,.selection-flow li>span { font-size:10px; letter-spacing:.12em; color:var(--muted); }
+.job-cards h3,.selection-flow h3 { margin:18px 0 12px; font-size:21px; }
+.job-cards p,.selection-flow p { font-size:13px; color:var(--muted); line-height:2; }
+.requirements-layout { display:grid; grid-template-columns:1fr 1.6fr; align-items:start; gap:75px; margin-top:55px; }
+.requirements-intro { position:sticky; top:135px; }
+.requirements-intro h2 { margin:18px 0; }
+.sample-tag { display:inline-block; padding:5px 12px; font-size:10px; background:var(--yellow); }
+.requirements-intro>p:not(.eyebrow) { font-size:12px; color:var(--muted); line-height:2; margin-top:24px; }
+.requirements-intro .text-link { width:fit-content; }
+.requirements-list { border-top:2px solid var(--ink); }
+.requirements-list>div { display:grid; grid-template-columns:120px 1fr; gap:20px; padding:26px 0; border-bottom:1px solid var(--line); font-size:13px; }
+.requirements-list dt { color:var(--muted); }
+.requirements-list small { display:block; margin-top:8px; color:var(--muted); font-size:11px; line-height:1.9; }
+.flow-section { background:#eaece5; }
+.selection-flow { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; list-style:none; counter-reset:steps; }
+.selection-flow li { padding:25px; border-top:3px solid var(--yellow); background:var(--paper); }
+.recruit-page .contact-info .text-link { width:fit-content; }
+@media(max-width:900px) {
+  .recruit-hero-grid { gap:30px; }
+  .recruit-hero-visual { height:350px; }
+  .requirements-layout { grid-template-columns:1fr 1.7fr; gap:35px; }
+  .requirements-list>div { grid-template-columns:100px 1fr; gap:15px; }
+  .selection-flow { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:700px) {
+  .recruit-hero { padding:110px 0 40px; }
+  .recruit-hero-grid { grid-template-columns:1fr; margin:38px 0 30px; gap:35px; }
+  .recruit-hero h1 { font-size:clamp(30px,8.7vw,48px); }
+  .recruit-lead { font-size:12px; }
+  .recruit-hero-visual { height:260px; }
+  .recruit-hero-visual>span { font-size:44px; }
+  .draft-notice { display:block; padding:20px; }
+  .draft-notice p { margin-top:12px; font-size:11px; }
+  .job-cards,.requirements-layout,.selection-flow { grid-template-columns:1fr; gap:25px; }
+  .requirements-layout { margin-top:35px; }
+  .requirements-intro { position:static; margin-bottom:15px; }
+  .requirements-list>div { display:block; padding:21px 0; }
+  .requirements-list dt { font-size:11px; margin-bottom:8px; }
+  .requirements-list dd { font-size:13px; }
+  .selection-flow li { padding:25px; }
+}

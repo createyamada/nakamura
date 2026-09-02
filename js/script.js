@@ -1,228 +1,52 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-    const header = document.querySelector(".header");
-    const hero = document.querySelector(".hero");
-    const hamburger = document.querySelector(".hamburger");
-    const nav = document.querySelector("nav");
-
-    /*==========================
-        Hero監視（Header切替）
-    ==========================*/
-
-    if (hero && header) {
-
-        const heroObserver = new IntersectionObserver(
-            ([entry]) => {
-
-                if (entry.isIntersecting) {
-
-                    header.classList.add("on-hero");
-                    header.classList.remove("scrolled");
-
-                } else {
-
-                    header.classList.remove("on-hero");
-                    header.classList.add("scrolled");
-
-                }
-
-            },
-            {
-                threshold: 0.1
-            }
-        );
-
-        heroObserver.observe(hero);
-
-    }
-
-    /*==========================
-        ハンバーガーメニュー
-    ==========================*/
-
-    if (hamburger && nav) {
-
-        hamburger.addEventListener("click", () => {
-
-            nav.classList.toggle("is-open");
-            hamburger.classList.toggle("is-open");
-
-            if (window.innerWidth <= 768) {
-
-                nav.style.display =
-                    nav.classList.contains("is-open")
-                        ? "flex"
-                        : "none";
-
-            }
-
-        });
-
-    }
-
-    /*==========================
-        リサイズ対応
-    ==========================*/
-
-    function updateMenu() {
-
-        if (!nav) return;
-
-        if (window.innerWidth > 768) {
-
-            nav.style.display = "flex";
-
-        } else if (!nav.classList.contains("is-open")) {
-
-            nav.style.display = "none";
-
-        }
-
-    }
-
-    updateMenu();
-
-    window.addEventListener("resize", updateMenu);
-
-    /*==========================
-        スムーススクロール
-    ==========================*/
-
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-        link.addEventListener("click", e => {
-
-            const target = document.querySelector(link.getAttribute("href"));
-
-            if (!target) return;
-
-            e.preventDefault();
-
-            target.scrollIntoView({
-
-                behavior: "smooth"
-
-            });
-
-            if (window.innerWidth <= 768) {
-
-                nav.classList.remove("is-open");
-                nav.style.display = "none";
-
-            }
-
-        });
-
-    });
-
-    /*==========================
-        フェードイン
-    ==========================*/
-
-    const fadeObserver = new IntersectionObserver(entries => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("show");
-
-            }
-
-        });
-
-    }, {
-
-        threshold: 0.2
-
-    });
-
-    document.querySelectorAll("section").forEach(section => {
-
-        section.classList.add("fade");
-
-        fadeObserver.observe(section);
-
-    });
-
-    document.querySelectorAll(".cards article").forEach(card => {
-
-        card.classList.add("fade");
-
-        fadeObserver.observe(card);
-
-    });
-
-    document.querySelectorAll(".gallery .item").forEach(item => {
-
-        item.classList.add("fade");
-
-        fadeObserver.observe(item);
-
-    });
-
-    /*==========================
-        カウンター
-    ==========================*/
-
-    document.querySelectorAll("[data-counter]").forEach(counter => {
-
-        let started = false;
-
-        const counterObserver = new IntersectionObserver(entries => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting && !started) {
-
-                    started = true;
-
-                    const target = parseInt(counter.dataset.counter);
-
-                    let value = 0;
-
-                    const increment = Math.ceil(target / 100);
-
-                    const timer = setInterval(() => {
-
-                        value += increment;
-
-                        if (value >= target) {
-
-                            value = target;
-
-                            clearInterval(timer);
-
-                        }
-
-                        counter.textContent = value.toLocaleString();
-
-                    }, 20);
-
-                }
-
-            });
-
-        });
-
-        counterObserver.observe(counter);
-
-    });
-
-    /*==========================
-        ギャラリー
-    ==========================*/
-
-    document.querySelectorAll(".gallery .item").forEach(item => {
-
-        item.addEventListener("click", () => {
-
-            item.classList.toggle("zoom");
-
-        });
-
-    });
-
-    console.log("Website Loaded");
-
+const menuButton = document.querySelector('.hamburger');
+const navigation = document.querySelector('#navigation');
+const mobile = window.matchMedia('(max-width: 700px)');
+function closeMenu(returnFocus = false) {
+  navigation.classList.remove('is-open');
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-label', 'メニューを開く');
+  if (returnFocus) menuButton.focus();
+}
+menuButton.addEventListener('click', () => {
+  const isOpen = menuButton.getAttribute('aria-expanded') !== 'true';
+  navigation.classList.toggle('is-open', isOpen);
+  menuButton.setAttribute('aria-expanded', String(isOpen));
+  menuButton.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
 });
+navigation.addEventListener('click', event => {
+  if (event.target.closest('a')) closeMenu();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') closeMenu(true);
+});
+document.addEventListener('click', event => {
+  if (!event.target.closest('.header')) closeMenu();
+});
+document.querySelector('.header').addEventListener('focusout', event => {
+  if (!event.currentTarget.contains(event.relatedTarget)) closeMenu();
+});
+mobile.addEventListener('change', () => closeMenu());
+const video = document.querySelector('.hero-video');
+const videoButton = document.querySelector('.video-toggle');
+if (video && videoButton) {
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+function updateVideoButton() {
+  videoButton.textContent = video.paused ? '▶ PLAY' : 'Ⅱ PAUSE';
+  videoButton.setAttribute('aria-label', video.paused ? '背景動画を再生' : '背景動画を一時停止');
+}
+function applyMotionPreference() {
+  if (reducedMotion.matches) video.pause();
+  videoButton.hidden = reducedMotion.matches;
+  updateVideoButton();
+}
+video.addEventListener('play', updateVideoButton);
+video.addEventListener('pause', updateVideoButton);
+video.addEventListener('error', () => { videoButton.hidden = true; });
+videoButton.addEventListener('click', async () => {
+  if (video.paused) {
+    try { await video.play(); } catch { updateVideoButton(); }
+  } else video.pause();
+});
+reducedMotion.addEventListener('change', applyMotionPreference);
+applyMotionPreference();
+}

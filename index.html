@@ -1,195 +1,67 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>株式会社ナカムラ</title>
-    <meta name="description" content="Sample corporate site">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="必要なインフラを、必要な場所に。株式会社ナカムラのガス配管工事、施工実績、会社概要をご紹介します。">
+<meta name="theme-color" content="#222823"><title>株式会社ナカムラ｜暮らしの、その先をつなぐ。</title>
+<link rel="stylesheet" href="css/style.css"><link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg"><script src="js/script.js" defer></script>
 </head>
-
 <body>
-    <header class="header">
-        <div class="logo">
-            <img src="assets/images/logo.png" alt="中村工業株式会社 ロゴ">
-            <h1 class="logo-text">株式会社ナカムラ</h1>
-            <p>Nakamura Co., Ltd.</p>
-        </div>
-        <button class="hamburger">☰</button>
-        <nav>
-            <a href="#about">ABOUT</a>
-            <a href="#service">SERVICE</a>
-            <a href="#works">WORKS</a>
-            <a href="#contact">CONTACT</a>
-        </nav>
-    </header>
-    <section class="hero">
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="assets/movies/hero.mp4" type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
-        <div class="hero__content">
-            <h1>必要なインフラを必要な場所に</h1>
-            <p>安心 × 安全</p>
-        </div>
-    </section>
-    <section id="works">
-        <!-- タイトル -->
-        <div class="about-header">
-            <div class="container">
-                <div class="section-title">
-                    <span class="first">W</span><span class="rest">ORK</span>
-                </div>
-                <p class="section-translate">会社紹介</p>
-            </div>
-        </div>
-        <!-- 横いっぱいの画像 -->
-        <div class="about-visual">
-            <img src="assets/images/divider.png" alt="">
-        </div>
-        <!-- 本文 -->
-        <div class="about-content">
-            <div class="container">
-                <p class="section-translate">作業実績</p>
-                <div class="works-grid">
-                    <a href="#" class="work large">
-                        <img src="assets/images/kanchu.jpg" alt="工場配管工事">
-                        <div class="overlay">
-                            <span>School</span>
-                            <h3>神奈川県平塚市立神田中学校</h3>
-                        </div>
-                    </a>
-                    <a href="#" class="work">
-                        <img src="assets/images/amyu.jpeg" alt="都市ガス工事">
-                        <div class="overlay">
-                            <span>Commercial Facility</span>
-                            <h3>amyu 厚木</h3>
-                        </div>
-                    </a>
-                    <a href="#" class="work">
-                        <img src="assets/images/hospital.jpg" alt="病院設備工事">
-                        <div class="overlay">
-                            <span>Hospital</span>
-                            <h3>神奈川県厚木市立病院</h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <section id="about" class="about">
-            <div class="container">
-                <div class="section-title">
-                    <span class="first">A</span><span class="rest">BOUT US</span>
-                </div>
-                <p class="section-translate section-translate-second">会社概要</p>
-                <!-- <h2 class="section-subtitle">会社概要</h2> -->
-                <div class="company-box">
-                    <table>
-                        <tr>
-                            <th>会社名</th>
-                            <td>株式会社ナカムラ</td>
-                        </tr>
-                        <tr>
-                            <th>代表取締役社長</th>
-                            <td>中村 将人</td>
-                        </tr>
-                        <tr>
-                            <th>所在地</th>
-                            <td>
-                                〒000-0000<br>
-                                ○○県○○市○○1-2-3
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>TEL</th>
-                            <td>000-000-0000</td>
-                        </tr>
-                        <tr>
-                            <th>FAX</th>
-                            <td>000-000-0000</td>
-                        </tr>
-                        <tr>
-                            <th>設立</th>
-                            <td>2005年4月</td>
-                        </tr>
-                        <tr>
-                            <th>資本金</th>
-                            <td>500万円</td>
-                        </tr>
-                        <tr>
-                            <th>従業員数</th>
-                            <td>15名</td>
-                        </tr>
-                        <tr>
-                            <th>事業内容</th>
-                            <td>
-                                ガス配管工事<br>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>建設業許可</th>
-                            <td>○○県知事許可 第12345号</td>
-                        </tr>
-                        <tr>
-                            <th>対応エリア</th>
-                            <td>○○県・△△県・□□県</td>
-                        </tr>
-                        <tr>
-                            <th>主要取引先</th>
-                            <td>東京ガス・厚木ガス</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            </div>
-        </section>
-        <!-- <section id="service">
-        <h2 class="section_title">SERVICE</h2>
-        <p class="section-translate">会社紹介</p>
-        <div class="cards">
-            <article>
-                <h3>Tile</h3>
-            </article>
-            <article>
-                <h3>Stone</h3>
-            </article>
-            <article>
-                <h3>Exterior</h3>
-            </article>
-        </div>
-    </section> -->
-
-
-    </section>
-    <section id="recrute">
-        <div class="container">
-            <div class="section-title">
-                <span class="first">R</span><span class="rest">CRUTE</span>
-            </div>
-            <p class="section-translate section-translate-second">作業実績</p>
-            <div class="gallery">
-                <div class="item">Project 1</div>
-                <div class="item">Project 2</div>
-                <div class="item">Project 3</div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="te">
-        <h2 style="font-family: 'Noto Sans JP', serif;">日本語（Noto Sans JP）</h2>
-        <h2 style="font-family: 'Zen Kaku Gothic New', serif;">日本語（Zen Kaku Gothic New）</h2>
-        <h2 style="font-family: 'BIZ UDPGothic', serif;">日本語（BIZ UDPGothic）</h2>
-        <h2 style="font-family: 'Bebas Neue', serif;">Alfabet（Bebas Neue）</h2>
-        <h2 style="font-family: 'Montserrat', serif;">Alfabet（Montserrat）</h2>
-        <h2 style="font-family: 'Anton', serif;">Alfabet（Anton）</h2>
-    </section>
+<a class="skip-link" href="#main">本文へ移動</a>
+<header class="header">
+<a class="logo" href="#top" aria-label="株式会社ナカムラ トップ"><img src="assets/images/logo.png" alt="" width="46" height="46"><span class="logo-text">株式会社ナカムラ<small>NAKAMURA CO., LTD.</small></span></a>
+<button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="navigation"><span></span><span></span></button>
+<nav id="navigation" aria-label="メインナビゲーション"><a href="#service">事業紹介</a><a href="#works">施工実績</a><a href="#about">会社情報</a><a href="#recruit">採用情報</a><a class="nav-contact" href="#contact">お問い合わせ <span aria-hidden="true">↗</span></a></nav>
+</header>
+<main id="main">
+<section class="hero" id="top" aria-labelledby="hero-title">
+<video class="hero-video" autoplay muted loop playsinline poster="assets/images/divider.png" aria-hidden="true"><source src="assets/movies/hero.mp4" type="video/mp4"></video><div class="hero-overlay"></div>
+<div class="hero-content container"><p class="eyebrow"><span class="dot"></span> CONNECTING LIFE, BUILDING TRUST.</p><h1 id="hero-title">暮らしの、<br>その先を<span class="accent">つなぐ。</span></h1><p class="hero-description">必要なインフラを、必要な場所に。<br>確かな仕事で、街の当たり前を支えていく。</p><a class="pill" href="#service">ナカムラの仕事を知る <span aria-hidden="true">↗</span></a></div>
+<div class="hero-bottom container"><a href="#service">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a><span>安心と安全を、一本の配管から。</span><button class="video-toggle" type="button" aria-label="背景動画を一時停止">Ⅱ PAUSE</button></div><span class="hero-word" aria-hidden="true">NAKAMURA</span>
+</section>
+<section class="service section" id="service" aria-labelledby="service-title"><div class="container">
+<div class="section-label"><span>01 / WHAT WE DO</span><span>事業紹介</span></div>
+<div class="service-intro"><h2 id="service-title">見えないところに、<br>ゆるがない<span class="underlined">安心を。</span></h2><div class="intro-copy"><p>毎日の暮らしにも、人が集まる街の施設にも。<br>ガスという身近なエネルギーが届く場所には、<br>それをつなぐ配管があります。</p><p>ナカムラは、ガス配管工事を通じて、<br>地域の暮らしと社会の基盤を支える会社です。</p></div></div>
+<div class="service-visual"><img src="assets/images/divider.png" alt="幾重にもつながるインフラ設備の配管" loading="lazy"><div class="service-caption"><span>OUR BUSINESS</span><h3>ガス配管工事</h3><p>つなぐ技術で、日常を支える。</p><a class="text-link" href="#works">施工実績を見る <span aria-hidden="true">↗</span></a></div><span class="visual-number" aria-hidden="true">01</span></div>
+</div></section>
+<section class="works section" id="works" aria-labelledby="works-title"><div class="container">
+<div class="section-label"><span>02 / SELECTED WORKS</span><span>施工実績</span></div><div class="section-heading"><h2 id="works-title">街とともに、<br>積み重ねる仕事。</h2><p>学びの場から、暮らしの拠点まで。<br>私たちが携わってきた施工実績をご紹介します。</p></div>
+<div class="works-grid">
+<article class="work"><div class="work-image"><img src="assets/images/kanchu.jpg" alt="平塚市立神田中学校の校舎" loading="lazy"><span>01</span></div><div class="work-meta"><span>EDUCATION</span><span>教育施設</span></div><h3>平塚市立神田中学校</h3><p>神奈川県平塚市</p></article>
+<article class="work"><div class="work-image"><img src="assets/images/amyu.jpeg" alt="amyu 厚木の建物" loading="lazy"><span>02</span></div><div class="work-meta"><span>COMMERCIAL</span><span>商業施設</span></div><h3>amyu 厚木</h3><p>神奈川県厚木市</p></article>
+<article class="work"><div class="work-image"><img src="assets/images/hospital.jpg" alt="厚木市立病院の建物" loading="lazy"><span>03</span></div><div class="work-meta"><span>HEALTHCARE</span><span>医療施設</span></div><h3>厚木市立病院</h3><p>神奈川県厚木市</p></article>
+</div></div></section>
+<section class="about section" id="about" aria-labelledby="about-title"><div class="container"><div class="section-label"><span>03 / ABOUT US</span><span>会社情報</span></div><div class="about-grid"><div><h2 id="about-title">確かな技術。<br>誠実な仕事。</h2><p class="about-copy">人と街のこれからを、足元から。<br>私たちは株式会社ナカムラです。</p><span class="about-mark" aria-hidden="true">N.</span></div><dl class="company-list"><div><dt>会社名</dt><dd>株式会社ナカムラ</dd></div><div><dt>代表取締役社長</dt><dd>中村 将人</dd></div><div><dt>設立</dt><dd>2005年4月</dd></div><div><dt>資本金</dt><dd>500万円</dd></div><div><dt>従業員数</dt><dd>15名</dd></div><div><dt>事業内容</dt><dd>ガス配管工事</dd></div><div><dt>主要取引先</dt><dd>東京ガス・厚木ガス</dd></div></dl></div></div></section>
+<section class="recruit section" id="recruit" aria-labelledby="recruit-title">
+  <div class="container">
+    <div class="section-label"><span>04 / RECRUIT</span><span>採用情報</span></div>
+    <div class="section-heading">
+      <h2 id="recruit-title">街を支える仕事を、<br>これからの自分に。</h2>
+      <p>ガス配管の技術で、暮らしの安心をつなぐ。<br>ナカムラの仕事に関心をお持ちの方へ。</p>
     </div>
-
-    <footer>© 株式会社ナカムラ</footer>
-    <script src="js/script.js"></script>
-</body>
-
-</html>
+    <div class="recruit-grid">
+      <article class="recruit-card">
+        <span class="recruit-number">01 / OUR WORK</span>
+        <h3>仕事を知る</h3>
+        <p>学校、商業施設、病院。地域のさまざまな施設に関わる、ガス配管工事の仕事をご紹介します。</p>
+        <a class="text-link" href="#works">施工実績を見る <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="recruit-card">
+        <span class="recruit-number">02 / OUR COMPANY</span>
+        <h3>ナカムラを知る</h3>
+        <p>必要なインフラを、必要な場所に。私たちの事業内容と会社情報をご覧ください。</p>
+        <a class="text-link" href="#about">会社情報を見る <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="recruit-card">
+        <span class="recruit-number">03 / INFORMATION</span>
+        <h3>募集要項</h3>
+        <p>仕事内容や募集条件、選考の流れをご紹介します。現在は制作サンプルを掲載しています。</p>
+        <a class="text-link" href="recruit.html">募集要項を見る <span aria-hidden="true">↗</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="contact" id="contact" aria-labelledby="contact-title"><div class="container contact-inner"><div><p class="eyebrow">LET’S CONNECT</p><h2 id="contact-title">つながるところから、<br>はじめよう。</h2></div><div class="contact-info"><h3>お問い合わせ</h3><p>お問い合わせ窓口は現在準備中です。<br>連絡先の公開まで、今しばらくお待ちください。</p></div></div></section>
+</main>
+<footer><div class="container footer-top"><a class="footer-brand" href="#top">株式会社ナカムラ<small>NAKAMURA CO., LTD.</small></a><a class="back-top" href="#top">BACK TO TOP <span aria-hidden="true">↑</span></a></div><div class="container footer-bottom"><span>必要なインフラを、必要な場所に。</span><small>© Nakamura Co., Ltd.</small></div></footer>
+</body></html>
